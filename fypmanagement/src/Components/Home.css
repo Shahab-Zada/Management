@@ -1,0 +1,19 @@
+
+
+  .welbox{
+    background-color: rgb(41, 30, 162);
+    color: white;
+  }
+  .changecolor{
+    color: rgb(80, 21, 243);
+  }
+  .changecolor:hover{
+    
+    text-decoration: underline;
+  }
+  .chairmanpic{
+    border-radius: 50%;
+  }
+  .title{
+    color: blue;
+  }
