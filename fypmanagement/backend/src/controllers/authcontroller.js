@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const { User, Group } = require("../models/usermodel");
-const uploadToDrive = require("../../uploades/googledrive");
+const uploadToDrive = require("../uploades/googledrive");
 const register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
