@@ -24,4 +24,6 @@ yarn-error.log*
 
 
 backend/src/config/apikey.json
+backend/src/.env
 
+*.env
