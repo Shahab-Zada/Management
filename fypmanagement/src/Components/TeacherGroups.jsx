@@ -14,8 +14,8 @@ const TeacherGroups = () => {
     const fetchGroups = async () => {
       try {
         const [supervisorRes, externalRes] = await Promise.all([
-          fetch(`http://localhost:8000/api/auth/supervisor/${supervisorName}`),
-          fetch(`http://localhost:8000/api/auth/external-groups/${supervisorName}`),
+          fetch(`https://management-production-4dab.up.railway.app/api/auth/supervisor/${supervisorName}`),
+          fetch(`https://management-production-4dab.up.railway.app/api/auth/external-groups/${supervisorName}`),
         ]);
         const [supervisorData, externalData] = await Promise.all([
           supervisorRes.json(),
@@ -56,10 +56,10 @@ const TeacherGroups = () => {
       let body = {};
 
       if (activeTab === "Monthly") {
-        url = `http://localhost:8000/api/auth/${selectedGroup._id}/update-monthly-marks`;
+        url = `https://management-production-4dab.up.railway.app/api/auth/${selectedGroup._id}/update-monthly-marks`;
         body = { marks: selectedGroup.marks || {} };
       } else if (activeTab === "Internal") {
-        url = `http://localhost:8000/api/auth/${selectedGroup._id}/update-internal-marks`;
+        url = `https://management-production-4dab.up.railway.app/api/auth/${selectedGroup._id}/update-internal-marks`;
         body = {
           attendance: selectedGroup.attendance || {},
           thesisMarks: selectedGroup.thesisMarks || 0,
@@ -68,7 +68,7 @@ const TeacherGroups = () => {
           demoRuntimeMarks: selectedGroup.demoRuntimeMarks || 0,
         };
       } else if (activeTab === "External") {
-        url = `http://localhost:8000/api/auth/external-marks/${selectedGroup._id}`;
+        url = `https://management-production-4dab.up.railway.app/api/auth/external-marks/${selectedGroup._id}`;
         body = {
           externalAttendance: selectedGroup.externalAttendance || {},
           externalThesisMarks: selectedGroup.externalThesisMarks || 0,
@@ -86,7 +86,7 @@ const TeacherGroups = () => {
 
       const data = await res.json();
       if (data.success) {
-        await fetch(`http://localhost:8000/api/auth/send-group-emails/${selectedGroup._id}`, {
+        await fetch(`https://management-production-4dab.up.railway.app/api/auth/send-group-emails/${selectedGroup._id}`, {
           method: "POST",
         });
         toast.success("Saved and email sent successfully!");

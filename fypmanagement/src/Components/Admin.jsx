@@ -26,7 +26,7 @@ const Admin = () => {
   ];
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/auth/getgroup', {
+    fetch('https://management-production-4dab.up.railway.app/api/auth/getgroup', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -50,7 +50,7 @@ const Admin = () => {
   };
 
   const handleSave = () => {
-    fetch(`http://localhost:8000/api/auth/update/${editId}`, {
+    fetch(`https://management-production-4dab.up.railway.app/api/auth/update/${editId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

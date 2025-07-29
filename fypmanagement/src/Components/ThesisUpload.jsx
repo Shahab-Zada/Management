@@ -28,7 +28,7 @@ export default function ThesisUpload() {
     formData.append("file", file);
 
     try {
-      const res = await fetch(`http://localhost:8000/api/auth/upload/${type}/${email}`, {
+      const res = await fetch(`https://management-production-4dab.up.railway.app/api/auth/upload/${type}/${email}`, {
         method: "POST",
         body: formData,
       });

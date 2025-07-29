@@ -18,7 +18,7 @@ export default function Marks() {
       }
 
       try {
-        const response = await fetch(`http://localhost:8000/api/auth/group/${email}`);
+        const response = await fetch(`https://management-production-4dab.up.railway.app/api/auth/group/${email}`);
         const data = await response.json();
 
         if (response.ok) {

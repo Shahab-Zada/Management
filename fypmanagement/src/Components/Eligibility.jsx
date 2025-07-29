@@ -124,7 +124,7 @@ const Eligibility = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:8000/api/auth/creategroup", {
+      const response = await fetch("https://management-production-4dab.up.railway.app/api/auth/creategroup", {
         method: "POST",
         body: formDataToSend,
       });

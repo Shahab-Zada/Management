@@ -40,7 +40,7 @@ const SignUp = () => {
         submissionData.append("file", formData.file);
       }
 
-      const response = await fetch("http://localhost:8000/api/auth/register", {
+      const response = await fetch("https://management-production-4dab.up.railway.app/api/auth/register", {
         method: "POST",
         body: submissionData,
       });
